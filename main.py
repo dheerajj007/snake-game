@@ -1,28 +1,20 @@
 from turtle import Turtle, Screen
+from snake import Snake
+import time
 
-timmy = Turtle()
 screen = Screen()
+screen.setup(width=600, height=600)
+screen.bgcolor("black")
+screen.tracer(0)
 
-def moveForward():
-    timmy.forward(10)
-def moveBackward():
-    timmy.backward(10)
-def moveLeft():
-    timmy.setheading(timmy.heading() + 10)
-    timmy.forward(10)
-def moveRight():
-    timmy.setheading(timmy.heading() - 10)
-    timmy.forward(10)
-def clear():
-    timmy.clear()
-    timmy.penup()
-    timmy.home()
-    timmy.pendown()
+snake = Snake()
     
-screen.listen()
-screen.onkey(moveForward, "w")
-screen.onkey(moveBackward, "s")
-screen.onkey(moveLeft, "a")
-screen.onkey(moveRight, "d")
-screen.onkey(clear, "c")
+gameIsOn = True 
+
+while gameIsOn:
+    screen.update()
+    time.sleep(0.1)
+    snake.move()    
+
+
 screen.exitonclick()
