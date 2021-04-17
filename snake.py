@@ -32,9 +32,7 @@ class Snake:
         self.head.forward(MOVE_DISTANCE)    
         
     def extend(self):
-        self.addSegment(self.segments[-1].position())
-            
-    
+        self.addSegment(self.segments[-1].position())    
     
     def up(self):  
         if self.head.heading() != DOWN:
